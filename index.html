@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>SCHLOSS</title>
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/img/icona_schloss.png">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/DINNextLTPro-Bold.css">
+    <link rel="stylesheet" href="assets/css/DINNextLTPro-BoldCondensed.css">
+    <link rel="stylesheet" href="assets/css/DINNextLTPro-Medium.css">
+    <link rel="stylesheet" href="assets/css/DINNextLTPro-MediumCond.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body style="background-color: rgb(231,52,76);color: rgb(255,255,255);margin: 50px;margin-right: 10%;margin-left: 10%;">
+    <div id="splash" class="overlay" style="width: 0%;">
+        <div class="container text-center" style="margin-top: 110px;">
+            <div class="row">
+                <div class="col">
+                    <p class="DinBoldCond" style="color: rgb(0,0,0);font-size: 42px;">TEST DI CONFORMITÀ<br>DEI CITTADINI DELLO STATO<br></p>
+                    <p class="DinBoldCond" style="color: rgb(0,0,0);font-size: 36px;">ID SESSIONE</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col"><input type="text" id="wiwcodeinput" class="wiwbutton wiwinput DinBoldCond" style="font-size: 56px;width: 200px;padding: 0px;" placeholder="_ _ _ _" maxlength="4" autocomplete="off" onfocus="onCodeInputClick()"></div>
+            </div>
+            <div class="row" style="margin-top: 150px;">
+                <div class="col"><button class="btn wiwbutton DinMedium" type="button" style="font-size: 28px;width: 50%;margin-top: 0;min-width: 300px;" onclick="closeSplash()">CONFERMA</button>
+                    <p id="idinesistente" class="d-none" style="color: rgb(0,0,0);font-size: 36px;font-family: DINNextLTPro-MediumCond;">ID&nbsp;INESISTENTE<br></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="personaggioModal" style="background-color: #e7344c;color: rgb(0,0,0);">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #e7344c;">
+                    <h6 class="modal-title modalHeaderText" style="color: rgb(0,0,0);font-family: DINNextLTPro-BoldCondensed;font-size: 38px;">AGENTE DI COMMERCIO</h6><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body text-center" style="background-color: #e7344c;padding: 0px;"><img class="img-fluid" id="modalImg" src=""></div>
+                <div class="modal-footer" style="background-color: #e7344c;">
+                    <div class="container">
+                        <div class="row" style="padding: 0px;">
+                            <div class="col" style="padding: 0px;">
+                                <p id="aiutoTesto" class="d-none" style="background: #000000;color: rgb(255,255,255);font-family: DINNextLTPro-BoldCondensed;font-size: 20px;padding-right: 10px;padding-left: 10px;padding-bottom: 10px;padding-top: 10px;">AIUTO 1</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col" style="padding: 0px;">
+                                <p style="font-family: DINNextLTPro-Medium;font-size: 20px;">Codice</p><input type="text" id="codeInput" class="wiwbutton wiwinput" style="width: 100%;font-size: 46px;margin-bottom: 16px;font-family: DINNextLTPro-Medium;" placeholder="_ _ _ _ _ " maxlength="5" oninput="checkCodeInput()" autocomplete="off">
+                                <button
+                                    class="btn wiwbutton" id="aiutoCodice1" type="button" style="font-size: 20px;width: 45%;font-family: DINNextLTPro-BoldCondensed;" onclick="showAiuto(this, 0)">AIUTO</button><button class="btn wiwbutton float-right" id="aiutoCodice2" type="button" style="font-size: 20px;width: 45%;font-family: DINNextLTPro-BoldCondensed;" onclick="showAiuto(this, 1)">AIUTO</button></div>
+                            <div class="col" style="padding-right: 0px;">
+                                <p style="font-size: 20px;font-family: DINNextLTPro-Medium;">Orientamento</p><button class="btn wiwbutton conformeBtn" id="conformeBtn" type="button" style="padding: 16%;background-repeat: no-repeat;background-size: contain;min-width: 70px;min-height: 70px;" onclick="setConforme(this, true)"></button>
+                                <button
+                                    class="btn wiwbutton nonconformeBtn float-right" id="nonconformeBtn" type="button" style="padding: 16%;background-repeat: no-repeat;background-size: contain;min-width: 70px;min-height: 70px;" onclick="setConforme(this, false)"></button><button class="btn wiwbutton" id="aiutoOrientamento" type="button" style="font-size: 20px;width: 100%;margin-top: 15px;font-family: DINNextLTPro-BoldCondensed;" onclick="showAiuto(this, 2)">AIUTO</button></div>
+                        </div>
+                        <div class="row" style="margin-top: 15px;">
+                            <div class="col" style="padding: 0px;">
+                                <div class="hdivider"></div><button class="btn wiwbutton" id="insertValues" type="button" style="width: 100%;font-family: DINNextLTPro-Medium;font-size: 30px;" onclick="insertValues()" data-dismiss="modal">INSERISCI</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center overlay" id="menuNav" style="width: 0%;">
+        <div style="min-width: 250px;max-width: 400px;height: 80%;margin-left: auto;margin-right: auto;"><button class="btn text-left d-flex justify-content-start" style="background-image: url(&quot;assets/img/menu.png&quot;);background-size: contain;background-repeat: no-repeat;height: 40px;width: 40px;margin-top: 50px;margin-left: 30px;" onclick="closeNav()"></button>
+            <div
+                class="overlay-content"><a href="#" onclick="loadTest()" style="font-family: DINNextLTPro-Medium;">Recupera Test</a>
+                <div class="hdivider"></div><a href="#" style="font-family: DINNextLTPro-Medium;" onclick="loadNewTest()">Nuovo Test</a>
+                <div class="hdivider"></div><a href="#" style="font-family: DINNextLTPro-Medium;" onclick="openHelpUrl()">Help</a>
+                <div class="hdivider"></div><a href="#" data-toggle="modal" data-target="#creditsModal" style="font-family: DINNextLTPro-Medium;">Credits</a></div>
+    </div>
+    </div>
+    <div class="container" style="max-width: 400px;min-width: 250px;">
+        <div class="row row-cols-1" style="padding-bottom: 10%;">
+            <div class="col-12 text-left" style="padding: 0;"><button class="btn" type="button" style="background-image: url(&quot;assets/img/menu.png&quot;);background-size: contain;background-repeat: no-repeat;padding: 5%;" onclick="openNav()"></button></div>
+        </div>
+        <div class="row justify-content-between">
+            <div class="col-2" style="padding-right: 0;padding-left: 0;margin: 0px;"><button class="btn wiwbutton2 difficulty" id="alpha" type="button" style="background-size: cover;background-repeat: no-repeat;" onclick="setDifficultyClick(&quot;alpha&quot;)"></button></div>
+            <div class="col-2" style="padding-left: 0;padding-right: 0;"><button class="btn wiwbutton2 difficulty" id="beta" type="button" style="background-size: cover;background-repeat: no-repeat;" onclick="setDifficultyClick(&quot;beta&quot;)"></button></div>
+            <div class="col-2" style="padding-right: 0;padding-left: 0;"><button class="btn wiwbutton2 difficulty" id="gamma" type="button" style="background-size: cover;background-repeat: no-repeat;" onclick="setDifficultyClick(&quot;gamma&quot;)"></button></div>
+            <div class="col-4" style="padding-right: 0;padding-left: 0;">
+                <p class="text-center wiwbutton wiwconfirmed DinBoldCond" id="currentCode" style="font-size: 46px;padding-top: 0;">----</p>
+            </div>
+        </div>
+        <div class="row row-cols-3 justify-content-between" style="margin-top: 10%;">
+            <div class="col" style="padding: 0;"><button class="btn wiwbutton2" id="giornalista1" type="button" onclick="clickOnChar(0)" style="padding: 40%;background-image: url(&quot;assets/img/Thumb_fotoreporter.png&quot;);background-size: cover;"></button></div>
+            <div class="col text-center" style="padding: 0px;height: 100%;"><button class="btn wiwbutton2" id="guardia2" type="button" style="padding: 40%;background-image: url(&quot;assets/img/Thumb_guardia.png&quot;);background-size: cover;" onclick="clickOnChar(1)"></button></div>
+            <div class="col text-right" style="padding: 0px;height: 100%;"><button class="btn wiwbutton2" id="agente3" type="button" style="background-image: url(&quot;assets/img/Thumb_agente.png&quot;);background-size: cover;padding: 40%;" onclick="clickOnChar(2)"></button></div>
+        </div>
+        <div class="row row-cols-3 justify-content-between" style="margin-top: 8%;">
+            <div class="col" style="padding: 0px;height: 100%;"><button class="btn wiwbutton2" id="manager4" type="button" style="background-image: url(&quot;assets/img/Thumb_manager.png&quot;);background-size: cover;padding: 40%;" onclick="clickOnChar(3)"></button></div>
+            <div class="col text-center" style="padding: 0px;height: 100%;"><button class="btn wiwbutton2" id="attore5" type="button" style="background-image: url(&quot;assets/img/Thumb_attore.png&quot;);background-size: cover;padding: 40%;" onclick="clickOnChar(4)"></button></div>
+            <div class="col text-right" style="padding: 0px;height: 100%;"><button class="btn wiwbutton2" id="infermiera6" type="button" style="background-image: url(&quot;assets/img/Thumb_infermiera.png&quot;);background-size: cover;padding: 40%;" onclick="clickOnChar(5)"></button></div>
+        </div>
+        <div class="row row-cols-3 justify-content-between" style="margin-top: 8%;">
+            <div class="col" style="padding: 0px;height: 100%;"><button class="btn wiwbutton2" id="religioso7" type="button" style="background-image: url(&quot;assets/img/Thumb_religioso.png&quot;);background-size: cover;padding: 40%;" onclick="clickOnChar(6)"></button></div>
+            <div class="col text-center" style="padding: 0px;height: 100%;"><button class="btn wiwbutton2" id="spia8" type="button" style="background-image: url(&quot;assets/img/Thumb_spia.png&quot;);background-size: cover;padding: 40%;" onclick="clickOnChar(7)"></button></div>
+            <div class="col text-right" style="padding: 0px;height: 100%;"><button class="btn wiwbutton2" id="oste9" type="button" style="background-image: url(&quot;assets/img/Thumb_oste.png&quot;);background-size: cover;padding: 40%;" onclick="clickOnChar(8)"></button></div>
+        </div>
+        <div class="row" style="margin-top: 10%;">
+            <div class="col text-center" style="padding: 0px;"><button class="btn wiwbutton rounded-0" id="wiwverifica" type="button" style="width: 100%;font-size: 40px;font-family: DINNextLTPro-Medium;" onclick="sendTest()">VERIFICA</button></div>
+        </div>
+    </div><script>
+//console.log("ok");
+
+</script>
+    <div class="modal fade" role="dialog" tabindex="-1" id="creditsModal" style="background: #e7344c;">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-dark" style="background: #000000;">
+                    <h4 class="modal-title"></h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body" style="background: #000000;padding-right: 30px;padding-left: 30px;">
+                    <p style="font-family: DINNextLTPro-Bold;font-size: 27px;">CHI È CHI – UN SINGOLARE LIBRO INTERATTIVO TRATTO DALL’ESCAPE ROOM “WER IST WER”<br></p>
+                    <p style="font-family: DINNextLTPro-BoldCondensed;font-size: 24px;padding-bottom: 50px;">_Una produzione di: We Are Müesli (Claudia Molinari e Matteo Pozzi)<br>_Con la collaborazione di<br>Game Design &amp; Development: Paolo Tajé<br>Ricerca storica e sceneggiatura: Benedetta Pierfederici<br>Visual Design: Nicolò Marchetti,
+                        Federico Gambarana<br>_Video: Marco Ligabue<br>_Interpreti: Giovanni Avalle, Nathalie Bernardi, Federica Crisà, Pietro Giau, Francesca Puopolo, Matteo Rocchi, Igor Toniazzo, Vincenzo Valenti, Rossella Vicino<br></p>
+                </div>
+                <div class="modal-footer justify-content-center" style="background: #000000;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="errorModal" style="background: #e7344c;">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-dark" style="background: #000000;">
+                    <h4 class="modal-title"></h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body" style="background: #000000;padding-right: 30px;padding-left: 30px;">
+                    <p style="font-family: DINNextLTPro-MediumCond;font-size: 45px;">VERIFICA FALLITA<br></p>
+                    <p style="font-family: DINNextLTPro-Medium;font-size: 28px;margin: 0px;">Hai inserito:</p>
+                    <p id="codeErrors" style="font-family: DINNextLTPro-Bold;font-size: 170px;margin-bottom: -40px;margin-top: -40px;">1</p>
+                    <p style="font-family: DINNextLTPro-Medium;font-size: 28px;margin: 0px;">codici errati</p>
+                    <p id="conformityErrors" style="font-family: DINNextLTPro-Bold;font-size: 170px;margin-bottom: -40px;margin-top: -40px;">1</p>
+                    <p style="font-family: DINNextLTPro-Medium;font-size: 28px;margin: 0px;">orientamenti errati</p>
+                </div>
+                <div class="modal-footer justify-content-center" style="background: #000000;"><button class="btn btn-light" type="button" data-dismiss="modal" style="font-family: DINNextLTPro-Medium;font-size: 40px;width: 90%;">OK</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="videoModal" style="background: #e7344c;">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-dark" style="background: #000000;">
+                    <h4 class="modal-title"></h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body" style="background: #000000;">
+                    <div class="embed-responsive embed-responsive-1by1" id="videoEmbed"><iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wBjbCBTED34" id="videoiframe"></iframe></div>
+                </div>
+                <div class="modal-footer justify-content-center" style="background: #000000;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="resultModal" style="background: #e7344c;">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-dark" style="background: #000000;">
+                    <h4 class="modal-title"></h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body" style="background: #000000;padding-right: 30px;padding-left: 30px;">
+                    <p style="font-family: DINNextLTPro-MediumCond;font-size: 5vh;">VERIFICA RIUSCITA<br></p>
+                    <p style="font-family: DINNextLTPro-Medium;font-size: 3vh;padding-bottom: 50px;">Hai inserito codici e <br>orientamenti corretti.<br></p>
+                    <p style="font-family: DINNextLTPro-Medium;font-size: 3vh;">Il nuovo ID sessione è:<br></p>
+                    <p id="newSaveCode" style="font-family: DINNextLTPro-Bold;font-size: 19vh;">1234<br></p>
+                </div>
+                <div class="modal-footer justify-content-center" style="background: #000000;"><button class="btn btn-light" type="button" data-dismiss="modal" style="font-family: DINNextLTPro-Medium;font-size: 40px;width: 90%;">OK</button></div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/wiw.js"></script>
+</body>
+
+</html>

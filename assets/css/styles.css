@@ -1,0 +1,264 @@
+.wiwbutton {
+  background-color: white;
+  border: 4px solid black;
+  border-radius: 0px;
+  /*font-family: 'DIN Next LT Pro';*/
+  font-weight: 500;
+  /*font-style: normal;*/
+  /*vertical-align: middle;*/
+  /*font-size: 100%;*/
+  opacity: 1;
+}
+
+.wiwbutton2 {
+  background-color: white;
+  border: 4px solid black;
+  border-radius: 0px;
+}
+
+.wiwbutton:disabled {
+  background-color: transparent;
+  border: dotted;
+  opacity: 1;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(231,52,76);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 80%;
+  text-align: center;
+  margin-top: 30px;
+  margin-left: 10%;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #000000;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlayMenuBtn {
+  position: relative;
+  top: 36px;
+  left: 10%;
+}
+
+.modal-header {
+  /*border-top: 3px solid black;*/
+  /*border-left: 3px solid black;*/
+  /*border-right: 3px solid black;*/
+  border-bottom: 0px;
+}
+
+.modal-body {
+  /*border: 3px solid black;*/
+}
+
+.modal-footer {
+  /*border-left: 3px solid black;*/
+  /*border-right: 3px solid black;*/
+  /*border-bottom: 3px solid black;*/
+  border-top: 0px;
+}
+
+.wiwinput {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.conformeBtn {
+  background-image: url("conforme_bianco.png");
+}
+
+.nonconformeBtn {
+  background-image: url("nonconforme_bianco.png");
+}
+
+.conformeBtn.check {
+  background-image: url("conforme_nero.png");
+}
+
+.nonconformeBtn.check {
+  background-image: url("nonconforme_nero.png");
+}
+
+.hdivider {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  height: 1px;
+  width: 100%;
+  border-top: 3px solid black;
+}
+
+.difficulty {
+  padding: 50%;
+}
+
+.wiwconfirmed {
+  background-color: black;
+  color: white;
+}
+
+#alpha {
+  background-image: url("../../assets/img/Alfa_nero.png");
+}
+
+#beta {
+  background-image: url("../../assets/img/Beta_nero.png");
+}
+
+#gamma {
+  background-image: url("../../assets/img/Gamma_nero.png");
+}
+
+#alpha.wiwconfirmed {
+  background-image: url("../../assets/img/Alfa.png");
+}
+
+#beta.wiwconfirmed {
+  background-image: url("../../assets/img/Beta.png");
+}
+
+#gamma.wiwconfirmed {
+  background-image: url("../../assets/img/Gamma.png");
+}
+
+#conformeBtn {
+  background-image: url(../../assets/img/Conforme_nero.png);
+}
+
+#conformeBtn.wiwconfirmed {
+  background-image: url(../../assets/img/Conforme_bianco.png);
+}
+
+#nonconformeBtn {
+  background-image: url(../../assets/img/Nonconforme_nero.png);
+}
+
+#nonconformeBtn.wiwconfirmed {
+  background-image: url(../../assets/img/Nonconforme_bianco.png);
+}
+
+#giornalista1.conforme {
+  background-image: url("../../assets/img/Thumb_fotoreporter_conforme.png") !important;
+}
+
+#guardia2.conforme {
+  background-image: url("../../assets/img/Thumb_guardia_conforme.png") !important;
+}
+
+#agente3.conforme {
+  background-image: url("../../assets/img/Thumb_agente_conforme.png") !important;
+}
+
+#manager4.conforme {
+  background-image: url("../../assets/img/Thumb_manager_conforme.png") !important;
+}
+
+#attore5.conforme {
+  background-image: url("../../assets/img/Thumb_attore_conforme.png") !important;
+}
+
+#infermiera6.conforme {
+  background-image: url("../../assets/img/Thumb_infermiera_conforme.png") !important;
+}
+
+#religioso7.conforme {
+  background-image: url("../../assets/img/Thumb_religioso_conforme.png") !important;
+}
+
+#spia8.conforme {
+  background-image: url("../../assets/img/Thumb_spia_conforme.png") !important;
+}
+
+#oste9.conforme {
+  background-image: url("../../assets/img/Thumb_oste_conforme.png") !important;
+}
+
+#giornalista1.nonconforme {
+  background-image: url("../../assets/img/Thumb_fotoreporter_nonconforme.png") !important;
+}
+
+#guardia2.nonconforme {
+  background-image: url("../../assets/img/Thumb_guardia_nonconforme.png") !important;
+}
+
+#agente3.nonconforme {
+  background-image: url("../../assets/img/Thumb_agente_nonconforme.png") !important;
+}
+
+#manager4.nonconforme {
+  background-image: url("../../assets/img/Thumb_manager_nonconforme.png") !important;
+}
+
+#attore5.nonconforme {
+  background-image: url("../../assets/img/Thumb_attore_nonconforme.png") !important;
+}
+
+#infermiera6.nonconforme {
+  background-image: url("../../assets/img/Thumb_infermiera_nonconforme.png") !important;
+}
+
+#religioso7.nonconforme {
+  background-image: url("../../assets/img/Thumb_religioso_nonconforme.png") !important;
+}
+
+#spia8.nonconforme {
+  background-image: url("../../assets/img/Thumb_spia_nonconforme.png") !important;
+}
+
+#oste9.nonconforme {
+  background-image: url("../../assets/img/Thumb_oste_nonconforme.png") !important;
+}
+
+.conformeverificato {
+  background-image: url(../../assets/img/Conforme_play.png) !important;
+  background-color: black;
+}
+
+.nonconformeverificato {
+  background-image: url(../../assets/img/Nonconforme_play.png) !important;
+  background-color: black;
+}
+
+.close {
+  color: #fff;
+  opacity: 1;
+  font-size: 32px;
+}
+
+.DinBold {
+  font-family: 'DINNextLTPro-Bold';
+}
+
+.DinMedium {
+  font-family: 'DINNextLTPro-Medium';
+}
+
+.DinMediumCond {
+  font-family: 'DINNextLTPro-MediumCond';
+}
+
+.DinBoldCond {
+  font-family: 'DINNextLTPro-BoldCondensed';
+}
+

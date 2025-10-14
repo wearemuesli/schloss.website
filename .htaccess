@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www.schloss.website$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^schloss.website$ [NC]
+RewriteCond %{HTTP:X-Forwarded-Proto} !^https$
+RewriteRule ^(.*) https://schloss.website/$1 [R=301,L]
+</IfModule>

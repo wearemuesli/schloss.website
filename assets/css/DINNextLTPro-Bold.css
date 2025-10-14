@@ -1,0 +1,7 @@
+@font-face {
+	font-family: 'DINNextLTPro-Bold';
+	src: url(../../assets/fonts/DINNextLTPro-Bold.woff2) format('woff2'),
+	url(../../assets/fonts/DINNextLTPro-Bold.woff) format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
